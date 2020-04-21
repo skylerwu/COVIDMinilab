@@ -60,6 +60,12 @@ public class CircleQueueDriver {
 		}
 	}
 	
+	//ADDED THIS METHOD
+	public CircleQueue getCQueue()
+	{
+		return cqueue;
+	}
+	
 	
 	/* 
 	 * Illustrate different Objects that can be placed on same Queue
