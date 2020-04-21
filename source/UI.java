@@ -44,25 +44,6 @@ public class UI extends JFrame {
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setBounds(100, 100, 1322, 890);
 			
-			JLabel lblNewLabel_5 = new JLabel("CDC Logo");
-			lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
-			lblNewLabel_5.setBounds(36, 16, 77, 74);
-			getContentPane().add(lblNewLabel_5);
-			lblNewLabel_5.setIcon(new ImageIcon("CDC.png"));
-			
-			JLabel lblNewLabel_1 = new JLabel("CDC Covid-19 Case Database");
-			lblNewLabel_1.setFont(new Font("Big Caslon", Font.BOLD, 40));
-			lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-			lblNewLabel_1.setBounds(300, 27, 560, 55);
-			getContentPane().add(lblNewLabel_1);
-			//COVIDPieChartTest chart = new COVIDPieChartTest("Distribution of COVID-19 Cases");
-
-			JLabel lblNewLabel = new JLabel("US Map");
-			lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-			lblNewLabel.setBounds(875, 531, 306, 225);
-			getContentPane().add(lblNewLabel);
-			lblNewLabel.setIcon(new ImageIcon("corona.jpg"));
-			
 			//GETTING CIRCLEQUEUE OF DATA
 			CircleQueueDriver trial = new CircleQueueDriver();
 			CircleQueue data = trial.getCQueue();
@@ -84,12 +65,6 @@ public class UI extends JFrame {
 			lblTotalDeaths.setBounds(892, 99, 211, 60);
 			getContentPane().add(lblTotalDeaths);
 
-			
-			/*JPanel panel = new JPanel();
-			panel.setBounds(300, 400, 560, 367);
-			getContentPane().add(panel);*/
-
-			
 			/*ChartPanel chPanel = new ChartPanel(chart.getChart());
 			panel.add(chPanel);
 			chPanel.setPreferredSize(new Dimension(560, 367)); //size according to my window
@@ -105,6 +80,9 @@ public class UI extends JFrame {
 			Deaths.setRows(8);
 			Deaths.setBounds(234, 241, -197, 434);
 			getContentPane().add(Deaths);
+			
+			//DISPLAY SORTED BY MOST DEATHS BY STATE
+			StateStatistics.key = StateStatistics.KeyType.numDead;
 			data.insertionSort();
 			Deaths.setText(data.toString());
 			
@@ -128,6 +106,25 @@ public class UI extends JFrame {
 			btnSearch.setBounds(1184, 16, 117, 39);
 			getContentPane().add(btnSearch);
 			*/
+			
+			JLabel lblNewLabel_5 = new JLabel("CDC Logo");
+			lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+			lblNewLabel_5.setBounds(36, 16, 77, 74);
+			getContentPane().add(lblNewLabel_5);
+			lblNewLabel_5.setIcon(new ImageIcon("CDC.png"));
+			
+			JLabel lblNewLabel_1 = new JLabel("CDC Covid-19 Case Database");
+			lblNewLabel_1.setFont(new Font("Big Caslon", Font.BOLD, 40));
+			lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+			lblNewLabel_1.setBounds(300, 27, 560, 55);
+			getContentPane().add(lblNewLabel_1);
+			//COVIDPieChartTest chart = new COVIDPieChartTest("Distribution of COVID-19 Cases");
+
+			JLabel lblNewLabel = new JLabel("US Map");
+			lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+			lblNewLabel.setBounds(875, 531, 306, 225);
+			getContentPane().add(lblNewLabel);
+			lblNewLabel.setIcon(new ImageIcon("corona.jpg"));
 
 			
 		}
