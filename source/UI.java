@@ -101,6 +101,7 @@ public class UI extends JFrame {
 			getContentPane().add(lblMostDeaths);
 			
 			JTextArea Deaths = new JTextArea();
+			Deaths.setLineWrap(false);
 			Deaths.setRows(8);
 			Deaths.setBounds(234, 241, -197, 434);
 			getContentPane().add(Deaths);
