@@ -46,7 +46,7 @@ public class UI extends JFrame {
 			
 			//GETTING CIRCLEQUEUE OF DATA
 			CircleQueueDriver trial = new CircleQueueDriver();
-			CircleQueue data = trial.getCQueue();
+			CircleQueueAL data = trial.getCQueue();
 			//IMPORTANT
 			
 			JLabel lblTotalCases = new JLabel("TOTAL CASES: " + StateStatistics.totalCases);

@@ -1,4 +1,5 @@
- 
+import java.util.ArrayList;
+
 /**
  * Circle Queue Driver takes a list of Objects and puts them into a Queue
  * @author     John Mortensen
@@ -6,7 +7,7 @@
  */
 public class CircleQueueDriver {
 	
-	private CircleQueue cqueue;	// circle queue object
+	private CircleQueueAL cqueue;	// circle queue object
 	private int count; // number of objects in circle queue
 
 	/* 
@@ -15,16 +16,16 @@ public class CircleQueueDriver {
 	public CircleQueueDriver()
 	{
 		count = 0;		
-		cqueue = new CircleQueue();
+		cqueue = new CircleQueueAL();
 	}
 
 	/*
 	 * Add any array of objects to the queue
 	 */
-	public void addCQueue(Object[] objects)
+	public void addCQueue(ArrayList<Generics> arrayList)
 	{
-		ConsoleMethods.println("Add " + objects.length);
-		for (Object o : objects)
+		ConsoleMethods.println("Add " + arrayList.size());
+		for (Generics o : arrayList)
 		{
 			cqueue.add(o);
 			ConsoleMethods.println("Add: " + cqueue.getObject() + " " + cqueue);
@@ -61,7 +62,7 @@ public class CircleQueueDriver {
 	}
 	
 	//ADDED THIS METHOD
-	public CircleQueue getCQueue()
+	public CircleQueueAL getCQueue()
 	{
 		return cqueue;
 	}

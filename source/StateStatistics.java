@@ -1,4 +1,4 @@
- 
+import java.util.ArrayList;
 
 /*
  * StateStatistics class
@@ -61,8 +61,19 @@ public class StateStatistics extends Generics {
 	/* Initialize Animal data
 	 * 
 	 */
-	public static Generics[] stateData() {
-		Generics[] sd = { 
+	public static ArrayList<Generics> stateData() {
+		ArrayList<Generics> sd = new ArrayList<Generics>();
+		sd.add(new StateStatistics("Washington", 12499, 1641, "18.5%"));
+		sd.add(new StateStatistics("New York", 258361, 18821, "32.6%"));
+		sd.add(new StateStatistics("California", 33943, 1230, "7.4%"));
+		sd.add(new StateStatistics("Maryland", 14193, 652, "12.3%"));
+		sd.add(new StateStatistics("Wyoming", 438, 2, "13.2%"));
+		sd.add(new StateStatistics("Massachusetts", 39643, 1809, "24.6%"));
+		sd.add(new StateStatistics("Idaho", 1736, 48, "9.8%"));
+		sd.add(new StateStatistics("Indiana", 12097, 635, "9.6%"));
+		
+		/*
+		StateStatistics[] sd = { 
 				new StateStatistics("Washington", 12499, 1641, "18.5%"),
 				new StateStatistics("New York", 258361, 18821, "32.6%"),
 				new StateStatistics("California", 33943, 1230, "7.4%"),
@@ -72,6 +83,7 @@ public class StateStatistics extends Generics {
 				new StateStatistics("Idaho", 1736, 48, "9.8%"),
 				new StateStatistics("Indiana", 12097, 635, "9.6%")
 		};
+		*/
 		return sd;
 	}
 	
@@ -80,7 +92,7 @@ public class StateStatistics extends Generics {
 	 */
 	public static void main(String[] args)
 	{
-		Generics[] sd = stateData();
+		ArrayList<Generics> sd = stateData();
 		for(Generics a : sd)
 			System.out.println(a);
 	}
