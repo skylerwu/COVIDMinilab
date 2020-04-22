@@ -84,20 +84,23 @@ public class CircleQueueDriver {
 		trial.showCQueue();
 		
 		//sort queue objects by specific element within the object and display in sort order
-		StateStatistics.key = StateStatistics.KeyType.name;
+		StateStatistics.key = StateStatistics.KeyType.percentPositive;
 		//Cupcakes.key = Cupcakes.KeyType.flavor;
 		//Alphabet.key = Alphabet.KeyType.letter;
 		trial.cqueue.insertionSort();
 		trial.showCQueue();
 		
+		/*
 		//display queue objects
 		StateStatistics.key = StateStatistics.KeyType.combo;
 		//Cupcakes.key = Cupcakes.KeyType.combo;
 		//Alphabet.key = Alphabet.KeyType.combo;
 		trial.showCQueue();
 		
+		/*
 		//delete queue objects
 		trial.deleteCQueue();
+		*/
 	}
 	
 }

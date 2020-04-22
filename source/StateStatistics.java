@@ -14,6 +14,9 @@ public class StateStatistics extends Generics {
 	private int numCases; 
 	private int numDead;
 	private String percentPositive;
+	public static int totalCases = 824069;
+	public static int totalDead = 45142;
+	public static int totalRecovered = 75050;
 	
 	/* constructor
 	 * 
