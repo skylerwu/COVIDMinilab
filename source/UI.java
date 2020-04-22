@@ -151,6 +151,14 @@ public class UI extends JFrame {
 			getContentPane().add(lblNewLabel);
 			lblNewLabel.setIcon(new ImageIcon("corona.jpg"));
 			
+			JButton cali = new JButton("");
+			cali.setBounds(263, 266, 252, 326);
+			getContentPane().add(cali);
+			cali.setIcon(new ImageIcon("source/cali.png"));
+			cali.setContentAreaFilled(false);
+			cali.setFocusPainted(false);
+			cali.setBorderPainted(false);
+			
 
 			
 		}
