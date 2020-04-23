@@ -15,7 +15,7 @@ public class CircleQueueAL
 	private Generics firstObject;
 	private Generics lastObject;
 	private Generics currentObject;
-	private ArrayList<Generics> AL;
+	private ArrayList<Generics> AL = new ArrayList<Generics>();
 
   /**
    *  Constructor for the SinglyLinkedList object
@@ -164,7 +164,7 @@ public class CircleQueueAL
     String queueToString = "[";
 
     Generics object = firstObject;  			// start from the head
-    while (object != null)
+    while (object != null && object!= lastObject)
     {
     	queueToString += "("+object+")"; 		// append the data to output string
     	int currentIndex = AL.indexOf(object);
