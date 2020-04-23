@@ -75,7 +75,7 @@ public class CircleQueueALDriver {
 	
 	{			
 		//queue
-		CircleQueueDriver trial = new CircleQueueDriver();
+		CircleQueueALDriver trial = new CircleQueueALDriver();
 		
 		//add different types of objects to the same opaque queue
 		trial.addCQueue(StateStatistics.stateData());

@@ -26,7 +26,7 @@ public class CircleQueueAL
     firstObject = null;
     lastObject = null;
     currentObject = null;
-	AL = null;
+	//AL = null;
   }
   
   /**
