@@ -204,7 +204,7 @@ public class CircleQueueAL
 		String keyText = object2.toString();
 
 		//walks slots backwards until key position in found
-		while (slot1.toString().compareTo(keyText) > 0 ) {
+		/*while (slot1.toString().compareTo(keyText) > 0 && AL.indexOf(slot1) != 0 && AL.indexOf(slot2) != 0) {
 	    	//shifts object greater than key value to the right in list
     		AL.set(AL.indexOf(slot2),slot1);
 
@@ -218,7 +218,20 @@ public class CircleQueueAL
 			if (slot1 == null)
 				break;
 			
-    	}
+    	}*/
+		while (slot1.toString().compareTo(keyText) > 0 ) {
+		    //shifts object greater than key value to the right in list
+		int currentIndex1 = AL.indexOf(slot1);
+		    int currentIndex2 = AL.indexOf(slot2);
+
+		    AL.set(currentIndex2,slot1);
+		    AL.set(currentIndex1,slot2);
+
+		//stop at the front of list
+		if (slot1 == null)
+		break;
+
+		    }
 		//place key in insertion position
 		AL.set(AL.indexOf(slot2), key);
     	//slot2.setObject(key.getObject());
