@@ -45,7 +45,7 @@ public class UI extends JFrame {
 			setBounds(100, 100, 1322, 890);
 			
 			//GETTING CIRCLEQUEUE OF DATA
-			CircleQueueDriver trial = new CircleQueueDriver();
+			CircleQueueALDriver trial = new CircleQueueALDriver();
 			CircleQueueAL data = trial.getCQueue();
 			//IMPORTANT
 			
