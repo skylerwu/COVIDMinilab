@@ -1,30 +1,31 @@
- 
+import java.util.ArrayList;
+
 /**
  * Circle Queue Driver takes a list of Objects and puts them into a Queue
  * @author     John Mortensen
  *
  */
-public class CircleQueueDriver {
+public class CircleQueueALDriver {
 	
-	private CircleQueue cqueue;	// circle queue object
+	private CircleQueueAL cqueue;	// circle queue object
 	private int count; // number of objects in circle queue
 
 	/* 
 	 * Circle queue constructor
 	 */
-	public CircleQueueDriver()
+	public CircleQueueALDriver()
 	{
 		count = 0;		
-		cqueue = new CircleQueue();
+		cqueue = new CircleQueueAL();
 	}
 
 	/*
 	 * Add any array of objects to the queue
 	 */
-	public void addCQueue(Object[] objects)
+	public void addCQueue(ArrayList<Generics> arrayList)
 	{
-		ConsoleMethods.println("Add " + objects.length);
-		for (Object o : objects)
+		ConsoleMethods.println("Add " + arrayList.size());
+		for (Generics o : arrayList)
 		{
 			cqueue.add(o);
 			ConsoleMethods.println("Add: " + cqueue.getObject() + " " + cqueue);
@@ -60,6 +61,12 @@ public class CircleQueueDriver {
 		}
 	}
 	
+	//ADDED THIS METHOD
+	public CircleQueueAL getCQueue()
+	{
+		return cqueue;
+	}
+	
 	
 	/* 
 	 * Illustrate different Objects that can be placed on same Queue
@@ -71,29 +78,30 @@ public class CircleQueueDriver {
 		CircleQueueDriver trial = new CircleQueueDriver();
 		
 		//add different types of objects to the same opaque queue
-		trial.addCQueue(Animal.animalData());
+		trial.addCQueue(StateStatistics.stateData());
 		//trial.addCQueue(Cupcakes.cupCakeData());
 		//trial.addCQueue(Alphabet.alphabetData());		
 		//display queue objects in queue order
 		trial.showCQueue();
 		
-		
 		//sort queue objects by specific element within the object and display in sort order
-		Animal.key = Animal.KeyType.name;
-		Cupcakes.key = Cupcakes.KeyType.flavor;
-		Alphabet.key = Alphabet.KeyType.letter;
+		StateStatistics.key = StateStatistics.KeyType.percentPositive;
+		//Cupcakes.key = Cupcakes.KeyType.flavor;
+		//Alphabet.key = Alphabet.KeyType.letter;
 		trial.cqueue.insertionSort();
 		trial.showCQueue();
 		
+		/*
 		//display queue objects
-		Animal.key = Animal.KeyType.combo;
-		Cupcakes.key = Cupcakes.KeyType.combo;
-		Alphabet.key = Alphabet.KeyType.combo;
+		StateStatistics.key = StateStatistics.KeyType.combo;
+		//Cupcakes.key = Cupcakes.KeyType.combo;
+		//Alphabet.key = Alphabet.KeyType.combo;
 		trial.showCQueue();
 		
+		/*
 		//delete queue objects
-		//trial.deleteCQueue();
-		
+		trial.deleteCQueue();
+		*/
 	}
 	
 }
