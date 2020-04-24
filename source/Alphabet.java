@@ -5,7 +5,7 @@ public class Alphabet extends Generics {
 	public enum KeyType {combo, letter};
 	public static KeyType key = KeyType.combo;
 	private char letter;
-	
+	private int commit = 0;
 	/*
 	 * single letter object
 	 */

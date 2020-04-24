@@ -189,6 +189,7 @@ public class CircleQueueAL
 	  return queueToString;
   }
   
+  //These alternative toString methods are used for proper display in UI. These are NOT used in logic of selection sort.
   public String toString2()
   {
 	  String queueToString = "";
@@ -197,7 +198,7 @@ public class CircleQueueAL
 	  {
 		  queueToString += i + ". ";
 		  //queueToString+= StateStatistics.KeyType.name;
-		  queueToString += object.toString();
+		  queueToString += object.getName() + ": " + object.toString();
 		  queueToString += "\n ";
 		  i++;
 	  }
@@ -216,7 +217,7 @@ public class CircleQueueAL
 	  {
 		  queueToString += i + ". ";
 		  //queueToString+= StateStatistics.KeyType.name;
-		  queueToString += object.toString() + " %";
+		  queueToString += object.getName() + ": " + object.toString() + " %";
 		  queueToString += "\n ";
 		  i++;
 	  }

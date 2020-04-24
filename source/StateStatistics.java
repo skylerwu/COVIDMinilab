@@ -87,6 +87,11 @@ public class StateStatistics extends Generics {
 		return sd;
 	}
 	
+	public String getName()
+	{
+		return this.name;
+	}
+	
 	/* main to test Animal class
 	 * 
 	 */

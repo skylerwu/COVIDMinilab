@@ -2,10 +2,16 @@
 
 public abstract class Generics {
 	public static final String type = "Generic";
+	private String name;
 	private String subType;
 
 	protected void setType(String type) {
 		this.subType = type;
+	}
+	
+	public String getName()
+	{
+		return this.name;
 	}
 	
 	public String getType() {

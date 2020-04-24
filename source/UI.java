@@ -117,7 +117,7 @@ public class UI extends JFrame {
 			Cases.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			Cases.setLineWrap(false);
 			Cases.setRows(8);
-			Cases.setBounds(66, 241, 197, 434);
+			Cases.setBounds(36, 241, 227, 434);
 			getContentPane().add(Cases);
 			//DISPLAY SORTED BY MOST CASES BY STATE
 			StateStatistics.key = StateStatistics.KeyType.numCases;
