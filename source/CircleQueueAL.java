@@ -198,6 +198,7 @@ public class CircleQueueAL
 	  for(Generics object: AL)
 	  {
 		  queueToString += i + ". ";
+		  //queueToString+= StateStatistics.KeyType.name;
 		  queueToString += object.toString();
 		  queueToString += "\n ";
 		  i++;
@@ -241,7 +242,7 @@ public class CircleQueueAL
 		  Generics temp = AL.get(j);
 		  int possibleIndex = j;
 		  
-		  while(possibleIndex>0 && Integer.parseInt(AL.get(possibleIndex - 1).toString()) > Integer.parseInt(temp.toString()))
+		  while(possibleIndex>0 && Integer.parseInt(AL.get(possibleIndex - 1).toString()) < Integer.parseInt(temp.toString()))
 		  {
 			  AL.set(possibleIndex, AL.get(possibleIndex -1));
 			  possibleIndex--;
