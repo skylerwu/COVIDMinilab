@@ -79,7 +79,7 @@ public class UI extends JFrame {
 			lblMostDeaths.setBounds(978, 163, 269, 66);
 			getContentPane().add(lblMostDeaths);
 			JTextArea Deaths = new JTextArea();
-			Deaths.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+			Deaths.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			Deaths.setRows(8);
 			Deaths.setLineWrap(false);
 			Deaths.setBounds(1000, 241, 197, 434);
@@ -96,7 +96,7 @@ public class UI extends JFrame {
 			lblOfTests.setBounds(444, 163, 353, 66);
 			getContentPane().add(lblOfTests);
 			JTextArea Positives = new JTextArea();
-			Positives.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+			Positives.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			Positives.setRows(8);
 			Positives.setLineWrap(false);
 			Positives.setBounds(520, 241, 197, 434);
@@ -114,7 +114,7 @@ public class UI extends JFrame {
 			getContentPane().add(lblMostCasesBy);
 			
 			JTextArea Cases = new JTextArea();
-			Cases.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+			Cases.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			Cases.setLineWrap(false);
 			Cases.setRows(8);
 			Cases.setBounds(66, 241, 197, 434);
