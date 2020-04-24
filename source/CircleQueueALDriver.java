@@ -78,45 +78,37 @@ public class CircleQueueALDriver {
 		CircleQueueALDriver trial = new CircleQueueALDriver();
 		
 		//add different types of objects to the same opaque queue
-		trial.addCQueue(StateStatistics.stateData());
-		//trial.addCQueue(Cupcakes.cupCakeData());
-		//trial.addCQueue(Alphabet.alphabetData());		
+		trial.addCQueue(StateStatistics.stateData());	
 		//display queue objects in queue order
 		trial.showCQueue();
 		
 		//sort queue objects by specific element within the object and display in sort order
 		//IF KEYTYPE IS INTEGER/NUMBER, THEN USE insertionNumberSort!
 		//IF KEYTYPE IS STRING, THEN USE insertionStringSort!
-		StateStatistics.key = StateStatistics.KeyType.numCases;
-		//Cupcakes.key = Cupcakes.KeyType.flavor;
-		//Alphabet.key = Alphabet.KeyType.letter;
-		trial.cqueue.insertionNumberSort();
-		
-		trial.showCQueue();
-		
+		ConsoleMethods.println("Alphabetized States: ");
 		StateStatistics.key = StateStatistics.KeyType.name;
 		trial.cqueue.insertionStringSort();
 		trial.showCQueue();
 		
+		ConsoleMethods.println("States Ranked by Cases: ");
+		StateStatistics.key = StateStatistics.KeyType.numCases;
+		trial.cqueue.insertionNumberSort();
+		trial.showCQueue();
+		
+		ConsoleMethods.println("States Ranked by Number Dead: ");
+		StateStatistics.key = StateStatistics.KeyType.numDead;
+		trial.cqueue.insertionNumberSort();
+		trial.showCQueue();
+		
+		ConsoleMethods.println("States Ranked by Percent Positive ");
 		StateStatistics.key = StateStatistics.KeyType.percentPositive;
 		trial.cqueue.insertionNumberSortDouble();
 		trial.showCQueue();
 		
-		/*StateStatistics.key = StateStatistics.KeyType.name;
-		trial.cqueue.insertionStringSort();
-		trial.showCQueue();*/
 		
-		/*
-		//display queue objects
-		StateStatistics.key = StateStatistics.KeyType.combo;
-		//Cupcakes.key = Cupcakes.KeyType.combo;
-		//Alphabet.key = Alphabet.KeyType.combo;
-		trial.showCQueue();
-		
-		/*
 		//delete queue objects
 		trial.deleteCQueue();
-		*/
+	
 	}
 	
 }
