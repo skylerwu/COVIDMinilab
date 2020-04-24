@@ -7,15 +7,16 @@
  */
 public class Sorts
 {
-    enum ListType {Standard, Bubble, Insert};
+    enum ListType {Standard, Bubble, Insert, Selection};
     ListType listType = ListType.Standard;
     
     private int[] list;
     private int[] blist; int bcompares = 0; int bswaps = 0;
     private int[] ilist; int icompares = 0; int iswaps = 0;
+    private int[] slist; int scompares = 0; int sswaps = 0;
 
     /**
-     * Constructor for objects of class isort
+     * Constructor for objects of class Sort
      */
     public Sorts()
     {
@@ -28,6 +29,8 @@ public class Sorts
         this.BubbleSort();
         ilist = list.clone();
         this.InsertionSort();
+        slist = list.clone();
+        this.SelectionSort();
     }
     
     public String toString() {
@@ -46,12 +49,25 @@ public class Sorts
                 list = this.blist;
                 break;
             case Insert:
+            	System.out.println("Insertion Sort -- "
+                        + " Operations: " + (this.icompares + this.iswaps)
+                        + " Compares: " + this.icompares
+                        + " Swaps: " + this.iswaps);
+                      list = this.ilist;
+                      break;
+            case Selection:
+            	 System.out.println("Selection Sort -- "
+                         + " Operations: " + (this.scompares + this.sswaps)
+                         + " Compares: " + this.scompares
+                         + " Swaps: " + this.sswaps);
+                       list = this.slist;
+                       break;
             default:
-                System.out.println("Insertions Sort -- "
-                  + " Operations: " + (this.icompares + this.iswaps)
-                  + " Compares: " + this.icompares
-                  + " Swaps: " + this.iswaps);
-                list = this.ilist;
+                System.out.println("Selection Sort -- "
+                  + " Operations: " + (this.scompares + this.sswaps)
+                  + " Compares: " + this.scompares
+                  + " Swaps: " + this.sswaps);
+                list = this.slist;
         }
                 
         String output = "[";
@@ -112,6 +128,32 @@ public class Sorts
         
         return ilist;
     }
+    
+    private int[] SelectionSort()
+    {
+    	for(int j=0; j<slist.length; j++)
+    	{
+    		int minIndex = j;
+    		
+    		//trying to find the minimum value to the right of j.
+    		for(int k=j+1; k<slist.length; k++)
+    		{
+    			this.scompares++; //compares counter. Must be here because every iteration always checks.
+    			if(slist[k]<slist[minIndex])
+    			{
+    				minIndex = k;
+    			}
+    		}
+    		
+    		//The actual swapping of the value in the j position with the minimum value in the rightward indices.
+    		int temp = slist[j];
+    		slist[j] = slist[minIndex];
+    		slist[minIndex] = temp;
+    		this.sswaps++; //swap counter
+    	}
+    	return slist;
+    }
+    
 
     /**
      *
@@ -120,6 +162,9 @@ public class Sorts
     {
         // Original List
         Sorts is = new Sorts();
+        
+        //Standard
+        is.listType = ListType.Standard;
         System.out.println(is);
         
         // Bubble Sort
@@ -128,6 +173,10 @@ public class Sorts
         
         // Insertion Sort
         is.listType = ListType.Insert;
+        System.out.println(is);
+        
+        //Selection Sort
+        is.listType = ListType.Selection;
         System.out.println(is);
     }
 }
