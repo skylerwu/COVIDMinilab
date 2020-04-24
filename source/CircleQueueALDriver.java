@@ -98,6 +98,10 @@ public class CircleQueueALDriver {
 		trial.cqueue.insertionStringSort();
 		trial.showCQueue();
 		
+		StateStatistics.key = StateStatistics.KeyType.percentPositive;
+		trial.cqueue.insertionNumberSortDouble();
+		trial.showCQueue();
+		
 		/*StateStatistics.key = StateStatistics.KeyType.name;
 		trial.cqueue.insertionStringSort();
 		trial.showCQueue();*/

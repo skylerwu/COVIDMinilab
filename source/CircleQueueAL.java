@@ -209,12 +209,30 @@ public class CircleQueueAL
 	  return queueToString;
   }
   
+  
+  public String toString3()
+  {
+	  String queueToString = "";
+	  int i =1;
+	  for(Generics object: AL)
+	  {
+		  queueToString += i + ". ";
+		  //queueToString+= StateStatistics.KeyType.name;
+		  queueToString += object.toString() + " %";
+		  queueToString += "\n ";
+		  i++;
+	  }
+	  
+	  //queueToString += "]";
+	  
+	  return queueToString;
+  }
   /**
    * Performs insertion sort based off of the contents of object
    */
   
   
-  //insertionSort for String fields
+  //insertionSort for String fields ACTUALLY SELECTION SORT
   public void insertionStringSort()
   {
 	  for(int j=1; j<AL.size(); j++)
@@ -234,7 +252,7 @@ public class CircleQueueAL
   
   }
   
-  //insertionSort for Number fields
+  //insertionSort for Number fields ACTUALLY SELECTION SORT
   public void insertionNumberSort()
   {
 	  for(int j=1; j<AL.size(); j++)
@@ -243,6 +261,26 @@ public class CircleQueueAL
 		  int possibleIndex = j;
 		  
 		  while(possibleIndex>0 && Integer.parseInt(AL.get(possibleIndex - 1).toString()) < Integer.parseInt(temp.toString()))
+		  {
+			  AL.set(possibleIndex, AL.get(possibleIndex -1));
+			  possibleIndex--;
+			  
+		  }
+		  
+		  AL.set(possibleIndex, temp);
+	  }
+  
+  }
+  
+  //insertionSort for double numbers (percent positive) ACTUALLY SELECTION SORT
+  public void insertionNumberSortDouble()
+  {
+	  for(int j=1; j<AL.size(); j++)
+	  {
+		  Generics temp = AL.get(j);
+		  int possibleIndex = j;
+		  
+		  while(possibleIndex>0 && Double.parseDouble(AL.get(possibleIndex - 1).toString()) < Double.parseDouble(temp.toString()))
 		  {
 			  AL.set(possibleIndex, AL.get(possibleIndex -1));
 			  possibleIndex--;

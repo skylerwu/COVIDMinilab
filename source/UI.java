@@ -103,8 +103,8 @@ public class UI extends JFrame {
 			getContentPane().add(Positives);
 			//DISPLAY SORTED BY MOST POSITIVES BY STATE
 			StateStatistics.key = StateStatistics.KeyType.percentPositive;
-			data.insertionStringSort();
-			Positives.setText(data.toString2());
+			data.insertionNumberSortDouble();
+			Positives.setText(data.toString3());
 			Positives.setLineWrap(true);
 			
 			JLabel lblMostCasesBy = new JLabel("Most Cases By State");
