@@ -79,6 +79,7 @@ public class UI extends JFrame {
 			lblMostDeaths.setBounds(978, 163, 269, 66);
 			getContentPane().add(lblMostDeaths);
 			JTextArea Deaths = new JTextArea();
+			Deaths.setFont(new Font("Times New Roman", Font.PLAIN, 15));
 			Deaths.setRows(8);
 			Deaths.setLineWrap(false);
 			Deaths.setBounds(1000, 241, 197, 434);
@@ -86,14 +87,16 @@ public class UI extends JFrame {
 			//DISPLAY SORTED BY MOST DEATHS BY STATE
 			StateStatistics.key = StateStatistics.KeyType.numDead;
 			data.insertionNumberSort();
-			Deaths.setText(data.toString());
-	
+			Deaths.setText(data.toString2());
+			Deaths.setLineWrap(true);
+			
 			JLabel lblOfTests = new JLabel("% Of Tests That Show Positive");
 			lblOfTests.setHorizontalAlignment(SwingConstants.CENTER);
 			lblOfTests.setFont(new Font("Tahoma", Font.PLAIN, 24));
 			lblOfTests.setBounds(444, 163, 353, 66);
 			getContentPane().add(lblOfTests);
 			JTextArea Positives = new JTextArea();
+			Positives.setFont(new Font("Times New Roman", Font.PLAIN, 15));
 			Positives.setRows(8);
 			Positives.setLineWrap(false);
 			Positives.setBounds(520, 241, 197, 434);
@@ -101,7 +104,8 @@ public class UI extends JFrame {
 			//DISPLAY SORTED BY MOST POSITIVES BY STATE
 			StateStatistics.key = StateStatistics.KeyType.percentPositive;
 			data.insertionStringSort();
-			Positives.setText(data.toString());
+			Positives.setText(data.toString2());
+			Positives.setLineWrap(true);
 			
 			JLabel lblMostCasesBy = new JLabel("Most Cases By State");
 			lblMostCasesBy.setHorizontalAlignment(SwingConstants.CENTER);
@@ -110,6 +114,7 @@ public class UI extends JFrame {
 			getContentPane().add(lblMostCasesBy);
 			
 			JTextArea Cases = new JTextArea();
+			Cases.setFont(new Font("Times New Roman", Font.PLAIN, 15));
 			Cases.setLineWrap(false);
 			Cases.setRows(8);
 			Cases.setBounds(66, 241, 197, 434);
@@ -117,7 +122,8 @@ public class UI extends JFrame {
 			//DISPLAY SORTED BY MOST CASES BY STATE
 			StateStatistics.key = StateStatistics.KeyType.numCases;
 			data.insertionNumberSort();
-			Cases.setText(data.toString());
+			Cases.setText(data.toString2());
+			Cases.setLineWrap(true);
 			
 			/*JTextField txtSearchForA = new JTextField();
 			txtSearchForA.setForeground(Color.BLACK);

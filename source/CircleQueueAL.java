@@ -191,6 +191,23 @@ public class CircleQueueAL
 	  return queueToString;
   }
   
+  public String toString2()
+  {
+	  String queueToString = "";
+	  int i =1;
+	  for(Generics object: AL)
+	  {
+		  queueToString += i + ". ";
+		  queueToString += object.toString();
+		  queueToString += "\n ";
+		  i++;
+	  }
+	  
+	  //queueToString += "]";
+	  
+	  return queueToString;
+  }
+  
   /**
    * Performs insertion sort based off of the contents of object
    */
