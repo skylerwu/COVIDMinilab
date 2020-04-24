@@ -82,15 +82,33 @@ public class CircleQueueALDriver {
 		//trial.addCQueue(Cupcakes.cupCakeData());
 		//trial.addCQueue(Alphabet.alphabetData());		
 		//display queue objects in queue order
+		ConsoleMethods.println("Queue");
 		trial.showCQueue();
 		
 		//sort queue objects by specific element within the object and display in sort order
 		//IF KEYTYPE IS INTEGER/NUMBER, THEN USE insertionNumberSort!
+		
+		//alphabetize states
+		trial.cqueue.insertionStringSort();
+		ConsoleMethods.println("Alphabetized Queue");
+		trial.showCQueue();
+		
 		//IF KEYTYPE IS STRING, THEN USE insertionStringSort!
 		StateStatistics.key = StateStatistics.KeyType.numCases;
 		//Cupcakes.key = Cupcakes.KeyType.flavor;
 		//Alphabet.key = Alphabet.KeyType.letter;
 		trial.cqueue.insertionNumberSort();
+		ConsoleMethods.println("Cases Ranked");
+		trial.showCQueue();
+		
+		StateStatistics.key = StateStatistics.KeyType.numDead;
+		trial.cqueue.insertionNumberSort();
+		ConsoleMethods.println("Dead Ranked");
+		trial.showCQueue();
+		
+		StateStatistics.key = StateStatistics.KeyType.percentPositive;
+		trial.cqueue.insertionNumberSort();
+		ConsoleMethods.println("Percent Positive Ranked");
 		trial.showCQueue();
 		
 		/*

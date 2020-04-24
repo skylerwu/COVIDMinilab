@@ -46,6 +46,7 @@ public class UI extends JFrame {
 			
 			//GETTING CIRCLEQUEUE OF DATA
 			CircleQueueALDriver trial = new CircleQueueALDriver();
+			trial.addCQueue(StateStatistics.stateData());
 			CircleQueueAL data = trial.getCQueue();
 			//IMPORTANT
 			
@@ -78,13 +79,13 @@ public class UI extends JFrame {
 			lblMostDeaths.setBounds(978, 163, 269, 66);
 			getContentPane().add(lblMostDeaths);
 			JTextArea Deaths = new JTextArea();
-			Deaths.setLineWrap(false);
 			Deaths.setRows(8);
-			Deaths.setBounds(65, 241, 197, 434);
+			Deaths.setLineWrap(false);
+			Deaths.setBounds(1000, 241, 197, 434);
 			getContentPane().add(Deaths);
 			//DISPLAY SORTED BY MOST DEATHS BY STATE
 			StateStatistics.key = StateStatistics.KeyType.numDead;
-			data.insertionSort();
+			data.insertionNumberSort();
 			Deaths.setText(data.toString());
 	
 			JLabel lblOfTests = new JLabel("% Of Tests That Show Positive");
@@ -99,7 +100,7 @@ public class UI extends JFrame {
 			getContentPane().add(Positives);
 			//DISPLAY SORTED BY MOST POSITIVES BY STATE
 			StateStatistics.key = StateStatistics.KeyType.percentPositive;
-			data.insertionSort();
+			data.insertionStringSort();
 			Positives.setText(data.toString());
 			
 			JLabel lblMostCasesBy = new JLabel("Most Cases By State");
@@ -107,14 +108,15 @@ public class UI extends JFrame {
 			lblMostCasesBy.setFont(new Font("Tahoma", Font.PLAIN, 24));
 			lblMostCasesBy.setBounds(26, 163, 269, 66);
 			getContentPane().add(lblMostCasesBy);
+			
 			JTextArea Cases = new JTextArea();
-			Cases.setRows(8);
 			Cases.setLineWrap(false);
-			Cases.setBounds(1000, 241, 197, 434);
+			Cases.setRows(8);
+			Cases.setBounds(66, 241, 197, 434);
 			getContentPane().add(Cases);
 			//DISPLAY SORTED BY MOST CASES BY STATE
 			StateStatistics.key = StateStatistics.KeyType.numCases;
-			data.insertionSort();
+			data.insertionNumberSort();
 			Cases.setText(data.toString());
 			
 			/*JTextField txtSearchForA = new JTextField();
