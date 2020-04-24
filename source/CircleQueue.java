@@ -7,7 +7,7 @@ import java.util.*;
  * @author     John Mortensen
  * @created    December 24, 2019
  */
-public class CircleQueue
+public class CircleQueue extends Sorts
 {
    private LinkedList headNode;			// 1st element in Queue
    private LinkedList tailNode;			// Last element in Queue
@@ -204,7 +204,38 @@ public class CircleQueue
     	node2 = node2.getNext();
     } 
     
-  } 
+  }
+
+    public void selectionSort()
+    {
+        LinkedList node = headNode;
+        int test = 0;
+        while (node != null) {
+            LinkedList minNode = node;
+            LinkedList tempNode = node;
+            while (tempNode != null) {
+                if (tempNode.getObject().toString().compareTo(minNode.getObject().toString()) < 0) {
+                    minNode = tempNode;
+                }
+                tempNode = tempNode.getNext();
+            }
+            Object switchNode = node.getObject();
+            node.setObject(minNode.getObject());
+            minNode.setObject(switchNode);
+            node = node.getNext();
+        }
+
+    }
+
+    public static void main(String[] args) {
+      CircleQueue test = new CircleQueue();
+      test.add("allen");
+      test.add("nathan");
+      test.add("skyler");
+      test.add("ellie");
+      test.selectionSort();
+
+      System.out.println(test);
+    }
   
 }
-

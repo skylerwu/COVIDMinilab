@@ -94,7 +94,18 @@ public class CircleQueueDriver {
 		
 		//delete queue objects
 		//trial.deleteCQueue();
-		
+
+		//selectionSort
+		CircleQueueDriver trial2 = new CircleQueueDriver();
+
+		//unsorted
+		trial2.addCQueue(StateStatistics.stateData());
+		trial.showCQueue();
+
+		//sorted
+		StateStatistics.key = StateStatistics.KeyType.name;
+		trial2.cqueue.selectionSort();
+		trial2.showCQueue();
 	}
 	
 }
