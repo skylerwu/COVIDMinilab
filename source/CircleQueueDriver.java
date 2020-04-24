@@ -86,15 +86,6 @@ public class CircleQueueDriver {
 		trial.cqueue.insertionSort();
 		trial.showCQueue();
 		
-		//display queue objects
-		StateStatistics.key = StateStatistics.KeyType.combo;
-		//Cupcakes.key = Cupcakes.KeyType.combo;
-		//Alphabet.key = Alphabet.KeyType.combo;
-		trial.showCQueue();
-		
-		//delete queue objects
-		//trial.deleteCQueue();
-		
 	}
 	
 }

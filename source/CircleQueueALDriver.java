@@ -85,10 +85,12 @@ public class CircleQueueALDriver {
 		trial.showCQueue();
 		
 		//sort queue objects by specific element within the object and display in sort order
-		StateStatistics.key = StateStatistics.KeyType.percentPositive;
+		//IF KEYTYPE IS INTEGER/NUMBER, THEN USE insertionNumberSort!
+		//IF KEYTYPE IS STRING, THEN USE insertionStringSort!
+		StateStatistics.key = StateStatistics.KeyType.numCases;
 		//Cupcakes.key = Cupcakes.KeyType.flavor;
 		//Alphabet.key = Alphabet.KeyType.letter;
-		trial.cqueue.insertionSort();
+		trial.cqueue.insertionNumberSort();
 		trial.showCQueue();
 		
 		/*

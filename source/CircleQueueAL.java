@@ -1,6 +1,8 @@
 
 import java.util.*;
 
+import sun.net.www.content.text.Generic;
+
 /**
  *  Implementation of Queue, using LinkedList (previous and next).
  *
@@ -159,7 +161,7 @@ public class CircleQueueAL
    *
    * @return    string representation of this Queue
    */
-  public String toString()
+  /*public String toString()
   {
     String queueToString = "[";
 
@@ -174,79 +176,66 @@ public class CircleQueueAL
     }										// loop 'till queue ends
     queueToString += "]";
     return queueToString;
+  }*/
+  public String toString()
+  {
+	  String queueToString = "[";
+	  for(Generics object: AL)
+	  {
+		  queueToString += object.toString();
+		  queueToString += ", ";
+	  }
+	  
+	  queueToString += "]";
+	  
+	  return queueToString;
   }
   
   /**
    * Performs insertion sort based off of the contents of object
    */
-  public void insertionSort() {	
-	
-	//two nodes needed for insertion sort indexes
-    //LinkedList node1 = headNode;
-    //LinkedList node2 = (node1 == null) ? null : node1.getNext();
-    Generics object1 = firstObject;
-    int currentIndex = AL.indexOf(object1);
-    Generics object2 = (object1 == null) ? null: AL.get(currentIndex+1);
-    
-    //continue while nodes remain in bounds
-    while (object2 != null) {	
-    	
-    	//inner loop pointers for compares and shifts
-    	//LinkedList slot1 = node1;
-    	//LinkedList slot2 = node2;
-    	Generics slot1 = object1;
-    	Generics slot2 = object2;
-    		
-		//key to be inserted into sorted slot
-		//LinkedList key = new LinkedList(node2);		//note: make key a different object, persistent/static in value (node2 moves)
-		//String keyText = node2.getObject().toString();
-		Generics key = new StateStatistics(null,0,0,null);
-		String keyText = object2.toString();
-
-		//walks slots backwards until key position in found
-		/*while (slot1.toString().compareTo(keyText) > 0 && AL.indexOf(slot1) != 0 && AL.indexOf(slot2) != 0) {
-	    	//shifts object greater than key value to the right in list
-    		AL.set(AL.indexOf(slot2),slot1);
-
-			//moves inner loop pointers
-    		int currentIndex1 = AL.indexOf(slot1);
-    		int currentIndex2 = AL.indexOf(slot2);
-			slot1 = AL.get(currentIndex1-1);
-			slot2 = AL.get(currentIndex2-1);
-			
-			//stop at the front of list
-			if (slot1 == null)
-				break;
-			
-    	}*/
-		while (slot1.toString().compareTo(keyText) > 0 ) {
-		    //shifts object greater than key value to the right in list
-		int currentIndex1 = AL.indexOf(slot1);
-		    int currentIndex2 = AL.indexOf(slot2);
-
-		    AL.set(currentIndex2,slot1);
-		    AL.set(currentIndex1,slot2);
-
-		//stop at the front of list
-		if (slot1 == null)
-		break;
-
-		    }
-		//place key in insertion position
-		AL.set(AL.indexOf(slot2), key);
-    	//slot2.setObject(key.getObject());
-
-    	//advance insertion sort indexes
-		int currentIndex1 = AL.indexOf(object1);
-		int currentIndex2 = AL.indexOf(object2);
-		
-		object1 = AL.get(currentIndex1 + 1);
-		object2 = AL.get(currentIndex2 + 1);
-    	//node1 = node1.getNext();
-    	//node2 = node2.getNext();
-    } 
-    
-  } 
+  
+  
+  //insertionSort for String fields
+  public void insertionStringSort()
+  {
+	  for(int j=1; j<AL.size(); j++)
+	  {
+		  Generics temp = AL.get(j);
+		  int possibleIndex = j;
+		  
+		  while(possibleIndex>0 && AL.get(possibleIndex - 1).toString().compareTo(temp.toString())>0)
+		  {
+			  AL.set(possibleIndex, AL.get(possibleIndex -1));
+			  possibleIndex--;
+			  
+		  }
+		  
+		  AL.set(possibleIndex, temp);
+	  }
+  
+  }
+  
+  //insertionSort for Number fields
+  public void insertionNumberSort()
+  {
+	  for(int j=1; j<AL.size(); j++)
+	  {
+		  Generics temp = AL.get(j);
+		  int possibleIndex = j;
+		  
+		  while(possibleIndex>0 && Integer.parseInt(AL.get(possibleIndex - 1).toString()) > Integer.parseInt(temp.toString()))
+		  {
+			  AL.set(possibleIndex, AL.get(possibleIndex -1));
+			  possibleIndex--;
+			  
+		  }
+		  
+		  AL.set(possibleIndex, temp);
+	  }
+  
+  }
+  
   
 }
 
