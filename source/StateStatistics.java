@@ -14,9 +14,9 @@ public class StateStatistics extends Generics {
 	private int numCases; 
 	private int numDead;
 	private double percentPositive;
-	public static int totalCases = 824069;
-	public static int totalDead = 45142;
-	public static int totalRecovered = 75050;
+	public final static int totalCases = 824069;
+	public final static int totalDead = 45142;
+	public final static int totalRecovered = 75050;
 	
 	/* constructor
 	 * 
@@ -52,7 +52,8 @@ public class StateStatistics extends Generics {
 			break;
 		case combo:
 		default:
-			output += type + ": " + this.name  + ", Cases- " + this.numCases + ", Dead-" + this.numDead + ", % of Positive Tests-" + this.percentPositive; 
+			output += type + ": " + this.name  + ", Cases- " + this.numCases + ", Dead-" + 
+					this.numDead + ", % of Positive Tests-" + this.percentPositive; 
 		}
 		return output;
 		
@@ -72,18 +73,6 @@ public class StateStatistics extends Generics {
 		sd.add(new StateStatistics("Idaho", 1736, 48, 9.8));
 		sd.add(new StateStatistics("Indiana", 12097, 635, 9.6));
 		
-		/*
-		StateStatistics[] sd = { 
-				new StateStatistics("Washington", 12499, 1641, "18.5%"),
-				new StateStatistics("New York", 258361, 18821, "32.6%"),
-				new StateStatistics("California", 33943, 1230, "7.4%"),
-				new StateStatistics("Maryland", 14193, 652, "12.3%"),
-				new StateStatistics("Wyoming", 438, 2, "13.2%"),
-				new StateStatistics("Massachusetts", 39643, 1809, "24.6%"),
-				new StateStatistics("Idaho", 1736, 48, "9.8%"),
-				new StateStatistics("Indiana", 12097, 635, "9.6%")
-		};
-		*/
 		return sd;
 	}
 	

@@ -82,7 +82,7 @@ public class UI extends JFrame {
 			Deaths.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			Deaths.setRows(8);
 			Deaths.setLineWrap(false);
-			Deaths.setBounds(1000, 241, 197, 434);
+			Deaths.setBounds(1000, 241, 226, 219);
 			getContentPane().add(Deaths);
 			//DISPLAY SORTED BY MOST DEATHS BY STATE
 			StateStatistics.key = StateStatistics.KeyType.numDead;
@@ -99,7 +99,7 @@ public class UI extends JFrame {
 			Positives.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			Positives.setRows(8);
 			Positives.setLineWrap(false);
-			Positives.setBounds(520, 241, 197, 434);
+			Positives.setBounds(509, 241, 241, 219);
 			getContentPane().add(Positives);
 			//DISPLAY SORTED BY MOST POSITIVES BY STATE
 			StateStatistics.key = StateStatistics.KeyType.percentPositive;
@@ -117,7 +117,7 @@ public class UI extends JFrame {
 			Cases.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			Cases.setLineWrap(false);
 			Cases.setRows(8);
-			Cases.setBounds(36, 241, 227, 434);
+			Cases.setBounds(36, 241, 259, 219);
 			getContentPane().add(Cases);
 			//DISPLAY SORTED BY MOST CASES BY STATE
 			StateStatistics.key = StateStatistics.KeyType.numCases;
@@ -144,7 +144,7 @@ public class UI extends JFrame {
 			lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 			lblNewLabel_5.setBounds(36, 16, 77, 74);
 			getContentPane().add(lblNewLabel_5);
-			lblNewLabel_5.setIcon(new ImageIcon("CDC.png"));
+			lblNewLabel_5.setIcon(new ImageIcon("source/CDC.png"));
 			
 			JLabel lblNewLabel_1 = new JLabel("CDC Covid-19 Case Database");
 			lblNewLabel_1.setFont(new Font("Big Caslon", Font.BOLD, 40));
@@ -155,12 +155,12 @@ public class UI extends JFrame {
 
 			JLabel lblNewLabel = new JLabel("US Map");
 			lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-			lblNewLabel.setBounds(875, 531, 306, 225);
+			lblNewLabel.setBounds(486, 517, 306, 225);
 			getContentPane().add(lblNewLabel);
-			lblNewLabel.setIcon(new ImageIcon("corona.jpg"));
+			lblNewLabel.setIcon(new ImageIcon("source/corona.jpg"));
 			
 			JButton cali = new JButton("");
-			cali.setBounds(263, 266, 252, 326);
+			cali.setBounds(165, 462, 252, 326);
 			getContentPane().add(cali);
 			cali.setIcon(new ImageIcon("source/cali.png"));
 			cali.setContentAreaFilled(false);
